@@ -1,0 +1,26 @@
+# shell.nix
+{ hostPkgs ? import <nixpkgs> {} }:
+let
+  pkgsSrc = hostPkgs.fetchFromGitHub {
+    owner = "NixOS";
+    repo = "nixpkgs";
+    rev = "e0761655d8682b02a52fee01958cfe2873438d42";
+    sha256 = "1wc0ml0hc903l95zg2lnqcs99j019qha8zb1j7g8ybifg3g68a1b";
+  };
+  pkgs = import pkgsSrc {};
+  python-with-my-packages = pkgs.python3.withPackages (p: with p; [
+    (callPackage ./brownie.nix {})
+  ]);
+  pipx = pkgs.python39Packages.pipx;
+in
+#python-with-my-packages
+pkgs.mkShell {
+   buildInputs = [ pkgs.nodePackages.ganache pkgs.solc ];
+   inputsFrom = [ python-with-my-packages.env ];
+
+   shellHook = ''
+      ${pipx}/bin/pipx install eth-brownie
+      alias brownie=~/.local/bin/brownie
+
+   '';
+}
