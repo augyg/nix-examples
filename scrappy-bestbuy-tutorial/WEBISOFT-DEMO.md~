@@ -1,0 +1,12 @@
+
+
+Steps to check this nix drv is working:
+
+1) Install nix https://nixos.org/download/
+2) Run the following:
+```sh
+cd <this-directory>
+nix-shell
+cabal repl
+InCabalRepl> import Scrappy.Find
+```

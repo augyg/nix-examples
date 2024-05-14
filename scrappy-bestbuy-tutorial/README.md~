@@ -1,0 +1,19 @@
+# Scrappy Tutorial # 
+
+In the app folder, in Main.hs you will find the tutorial code
+
+to run this you will need to install Nix and will need to be Unix (Linux or MacOS). If you are on windows I'd get WSL. You could rip out the main function and just use main' as well as remove rhyolite-common from cabal and then use Stack to get the current version of scrappy but I'm not doing that here. Trust me Nix is amazing and worth it, same with WSL. 
+
+If you are unable to do so for whatever reason, shoot me a message at galen.sprout@gmail.com
+
+## Install Nix ## 
+
+Follow the relevant instructions here:
+
+https://nixos.org/download.html#nix-install-linux
+
+## nix-thunk For Changes to Scrappy ## 
+
+nix-thunk is an amazing tool for working on open-source projects that you depend on. 
+
+- hack for Documentation
