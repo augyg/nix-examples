@@ -1,4 +1,4 @@
-This is a collection nix derivations I have created.
+This is a collection of nix derivations I have created.
 
 Each comment is peppered with helpful comments to understand why I wrote the file as well as certain components
 
