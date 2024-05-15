@@ -1,6 +1,6 @@
 This is a collection of nix derivations I have created.
 
-Each comment is peppered with helpful comments to understand why I wrote the file as well as certain components
+Each file is peppered with helpful comments to understand why I wrote the file as well as certain components
 
 To avoid overload and certain security concerns, I have removed the actual source code that the nix expressions build however pyShell.nix and scrappy-bestbuy-tutorial 
 have all the pieces necessary to run the expression
